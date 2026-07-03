@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HIRO Portfolio</title>
+
+<style>
+
+/* ===== 全体 ===== */
+
+body{
+  margin:0;
+  height:100vh;
+
+  display:flex;
+
+  background-image:url("background.png");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  font-family:sans-serif;
+}
+
+/* ===== サイドバー ===== */
+
+.sidebar{
+
+  position:fixed;
+
+  left:-290px;
+  top:0;
+
+  width:250px;
+  height:100vh;
+
+  background:rgb(77, 77, 77);
+
+  backdrop-filter:blur(5px);
+
+  padding:20px;
+
+  box-sizing:border-box;
+
+  transition:0.3s;
+
+  z-index:999;
+}
+
+.sidebar.open{
+  left:0;
+}
+
+.logo{
+
+  color:white;
+
+  text-align:center;
+
+  font-size:28px;
+
+  margin-bottom:30px;
+}
+
+/* ===== メニュー ===== */
+
+.menu-btn{
+
+  width:100%;
+
+  padding:15px;
+
+  margin-bottom:10px;
+
+  border:none;
+
+  border-radius:15px;
+
+  background:#000d7e;
+
+  color:white;
+
+  font-size:16px;
+
+  cursor:pointer;
+
+  transition:0.15s;
+}
+
+.menu-btn:active{
+  transform:scale(0.95);
+}
+
+/* ===== メイン ===== */
+
+.main{
+  flex:1;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:flex-start;
+
+  padding-top:80px;
+}
+
+.card{
+
+  background:rgba(255,255,255,0.92);
+
+  padding:40px;
+
+  border-radius:30px;
+
+  max-width:700px;
+
+  text-align:center;
+}
+
+.card h1{
+
+  color:#000d7e;
+
+  margin-top:0;
+}
+
+.card p{
+
+  line-height:1.8;
+}
+
+/* ===== 作者 ===== */
+
+.author{
+
+  position:fixed;
+
+  right:15px;
+
+  bottom:15px;
+
+  color:white;
+
+  font-size:14px;
+}
+
+/* ===== スマホ ===== */
+
+@media screen and (max-width:700px){
+
+  .sidebar{
+
+    width:170px;
+  }
+
+  .logo{
+
+    font-size:22px;
+  }
+
+  .menu-btn{
+
+    font-size:14px;
+    padding:12px;
+  }
+
+  .card{
+
+    padding:25px;
+  }
+
+}
+
+.menu-toggle{
+
+  position:fixed;
+
+  top:20px;
+  left:20px;
+
+  width:55px;
+  height:55px;
+
+  border:none;
+  border-radius:15px;
+
+  background:#000d7e;
+
+  color:white;
+
+  font-size:28px;
+
+  cursor:pointer;
+
+  z-index:9999;
+}
+
+</style>
+
+</head>
+
+<body>
+
+  <button
+class="menu-toggle"
+onclick="toggleMenu()">
+
+☰
+
+</button>
+<!-- サイドバー -->
+
+<div class="sidebar" id="sidebar">
+
+  <div class="logo">
+    OKM Portfolio
+  </div>
+
+  <button
+    class="menu-btn"
+    onclick="location.href='index.html'">
+
+    HOME
+
+  </button>
+
+  <button
+    class="menu-btn"
+    onclick="location.href='sites.html'">
+
+    サイト紹介
+
+  </button>
+
+  <button
+    class="menu-btn"
+    onclick="location.href='illustrations.html'">
+
+    イラスト紹介
+
+  </button>
+
+</div>
+
+<!-- メイン -->
+
+<div class="main">
+<div class="card">
+
+  <h1>
+    サイト紹介
+  </h1>
+
+  <p>
+    自作のブラウザアプリです。
+  </p>
+
+  <hr>
+
+  <h2>
+    Habit Tracker
+  </h2>
+
+  <p>
+    習慣管理や占い機能を搭載した
+    ブラウザアプリです。
+  </p>
+
+  <button
+    class="menu-btn"
+    onclick="window.open(
+    'https://yuu0822.github.io/habit-tracker/',
+    '_blank')">
+
+    サイトへ移動
+
+  </button>
+
+  <h2>Todo List</h2>
+    <p>
+  タスク管理アプリ
+   </p>
+
+  <button
+  class="menu-btn"
+  onclick="window.open(
+  'https://yuu0822.github.io/to-doapp/',
+  '_blank')">
+
+  サイトへ移動
+
+</button>
+
+  <h2>文字バトル 字変</h2>
+    <p>
+  文字battleゲーム
+   </p>
+
+  <button
+  class="menu-btn"
+  onclick="window.open(
+  'https://yuu0822.github.io/ZIHEN/',
+  '_blank')">
+
+  サイトへ移動
+
+</button>
+
+</div>
+</div>
+
+<div class="author">
+  Author : HIRO
+</div>
+
+<script>
+
+function toggleMenu(){
+
+  document
+    .getElementById("sidebar")
+    .classList
+    .toggle("open");
+
+}
+
+</script>
+</body>
+
+</html>
